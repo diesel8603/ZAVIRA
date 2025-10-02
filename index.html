@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Zavira - Lazer Epilasyon & Güzellik</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">
+      <div class="logo">Z</div>
+      <div class="brand-text">
+        <div class="name">Zavira</div>
+        <div class="tag">Lazer Epilasyon & Güzellik</div>
+      </div>
+    </div>
+
+    <div class="nav-links">
+      <a href="#services">Hizmetler</a>
+      <a href="#gallery">Galeri</a>
+      <a href="#testimonials">Yorumlar</a>
+      <a href="#about">Hakkımızda</a>
+      <a href="#contact">İletişim</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="#appointment" class="btn primary">Randevu Al</a>
+      <button id="ownerBtn" class="btn ghost">Sahip Girişi</button>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <img src="images/hero.jpg" alt="hero" class="hero-img" />
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <h1>Zavira — Güvenli & Konforlu Güzellik Deneyimi</h1>
+        <p class="lead">Uzman kadro, son teknoloji cihazlar ve kişiye özel planla uzun süreli çözümler.</p>
+        <div class="hero-ctas">
+          <a href="#appointment" class="btn cta">Randevu Al</a>
+          <a href="#services" class="btn outline">Hizmetler</a>
+        </div>
+        <p class="note">İlk randevuda ücretsiz danışmanlık ve cilt analizi.</p>
+      </div>
+
+      <aside class="quick-book">
+        <h3>Hızlı Randevu</h3>
+        <form id="bookingForm">
+          <div class="row">
+            <input name="name" placeholder="Ad" required />
+            <input name="surname" placeholder="Soyad" required />
+          </div>
+          <input name="phone" placeholder="Telefon (5xxxxxxxxx veya +905xxxxxxxxx)" required />
+          <select name="service">
+            <option>Lazer Epilasyon</option>
+            <option>Cilt Bakımı</option>
+            <option>İğneli Estetik</option>
+            <option>Danışmanlık</option>
+          </select>
+          <input name="datetime" type="datetime-local" required />
+          <textarea name="note" placeholder="Ek not (opsiyonel)"></textarea>
+          <button type="submit" class="btn primary full">Randevu Gönder</button>
+          <div id="formMsg" class="form-msg" aria-live="polite"></div>
+        </form>
+      </aside>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Services -->
+    <section id="services" class="section">
+      <h2>Hizmetlerimiz</h2>
+      <p class="muted">Kişiye özel ve güvenli uygulamalar</p>
+      <div class="grid services-grid" id="servicesGrid"></div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="section pale">
+      <h2>Galeri</h2>
+      <div class="grid gallery-grid" id="galleryGrid"></div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section">
+      <h2>Müşteri Yorumları</h2>
+      <div class="grid testimonials-grid" id="testimonialsGrid"></div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section pale about-section">
+      <div class="about-inner">
+        <div>
+          <h2>Hakkımızda</h2>
+          <p>Zavira, uzman estetisyen kadrosu ve modern cihazlarla hizmet veren bir güzellik merkezidir. Müşteri memnuniyeti ve hijyen önceliğimizdir.</p>
+          <ul>
+            <li>Kişiye özel tedavi planları</li>
+            <li>Son teknoloji cihazlar</li>
+            <li>Güler yüzlü hizmet</li>
+          </ul>
+        </div>
+        <div><img src="images/service1.jpg" alt="hakkimizda görsel" class="about-img" /></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>İletişim & Konum</h2>
+      <div class="grid contact-grid">
+        <div class="card">
+          <h3>İletişim Bilgileri</h3>
+          <p>Adres: Örnek Mah. Güzel Sok. No:1, İstanbul</p>
+          <p>Telefon: +90 5xx xxx xx xx</p>
+          <p>E-posta: info@zavira.com</p>
+          <p><a class="btn whatsapp" href="https://wa.me/905xxxxxxxxx" target="_blank" rel="noreferrer">WhatsApp ile iletişime geç</a></p>
+        </div>
+        <div class="card">
+          <h3>Harita</h3>
+          <div class="map-placeholder">Google Maps iFrame buraya eklenecek</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="brand-footer">Zavira</div>
+        <div class="tag-footer">Lazer Epilasyon & Güzellik Merkezi</div>
+      </div>
+      <div>© <span id="year"></span> Zavira - Tüm Hakları Saklıdır</div>
+      <div><a href="#contact">İletişim</a> · <button id="backTop" class="link-btn">Yukarı</button></div>
+    </div>
+  </footer>
+
+  <!-- Owner modal -->
+  <div id="ownerModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="ownerClose">&times;</button>
+      <h3>Sahip Paneli</h3>
+      <div id="authBox">
+        <input id="ownerPass" type="password" placeholder="Şifre" />
+        <div class="modal-actions">
+          <button id="ownerLogin" class="btn primary">Giriş</button>
+          <button id="ownerClear" class="btn ghost">Temizle</button>
+          <button id="exportCsv" class="btn outline">CSV Dışa Aktar</button>
+        </div>
+      </div>
+
+      <div id="ownerPanel" class="owner-panel" hidden>
+        <h4>Gelen Randevular (<span id="bookCount">0</span>)</h4>
+        <div class="table-wrap">
+          <table id="bookingsTable">
+            <thead>
+              <tr><th>İsim</th><th>Soyad</th><th>Telefon</th><th>Hizmet</th><th>Tarih</th><th></th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <a id="whatsappFloat" class="whatsapp-float" href="https://wa.me/905xxxxxxxxx" target="_blank" rel="noreferrer">WhatsApp</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
